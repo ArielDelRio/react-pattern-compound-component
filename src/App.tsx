@@ -1,10 +1,25 @@
-import "./styles.css";
+import "./App.css";
+import { PostCard } from "./components/PostCard";
 
-export default function App() {
+export default function HomeFeedScreen() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <>
+      <PostCard
+        post={{
+          id: 1,
+          title: "Hello, World!",
+          content: "This is the first post pon our new blog.",
+          user: {
+            id: 1,
+            name: "John Doe",
+          },
+        }}
+      >
+        <PostCard.Title />
+        <PostCard.Content />
+        <PostCard.User />
+        <PostCard.Buttons />
+      </PostCard>
+    </>
   );
 }
